@@ -4,3 +4,22 @@
    box-sizing: border-box;
    font-family: 'Open Sans Condensed', sans-serif;
 }
+div.center{
+   max-width: 1280px;
+   padding: 0 2%;
+}
+div.w33{
+   width: 33.3%;
+}
+div.w50{
+   width: 50%;
+}
+div.clear{
+   clear: both;
+}
+div.left{
+   float: left;
+}
+div.right{
+   float: right;
+}
