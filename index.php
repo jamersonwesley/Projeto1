@@ -17,7 +17,7 @@
 <body>
     <header>
         <div>
-            <h1 class="logo" style="color:white">VACANT.INDIE </h1>
+            <h1 class="logo" style="color:white"><?php echo htmlentities("<")?>VACANT.INDIE<?php echo htmlentities(">")?> </h1>
             <nav class="desktop">
                 <ul>
                     <li>
@@ -57,6 +57,7 @@
 
     </header>
     <section class="banner-principal">
+        <div class="overlay"></div>
         <div class="center">
             <form action="post">
                 <h2>Qual o seu melhor email??</h2>
