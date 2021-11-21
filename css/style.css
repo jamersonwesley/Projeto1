@@ -4,23 +4,27 @@
    box-sizing: border-box;
    font-family: 'Open Sans Condensed', sans-serif;
 }
-div.center{
+img{
+   width: 100%;
+}
+.center{
    max-width: 1280px;
    padding: 0 2%;
 }
-div.w33{
+.w33{
    width: 33.3%;
 }
-div.w50{
+.w50{
+   padding: 0% 2%;
    width: 50%;
 }
-div.clear{
+.clear{
    clear: both;
 }
-div.left{
+.left{
    float: left;
 }
-div.right{
+.right{
    float: right;
 }
 header{
@@ -105,3 +109,27 @@ section.banner-principal form input[type=submit]{
    border: none;
    
 }
+section.descricao h2{
+   padding: 30px 0;
+}
+@media screen and (max-width: 700px){
+   
+   .w50{
+      padding: 20px;
+      width: 100%;
+   }
+}
+
+
+@media screen and (max-width: 700px){
+nav.desktop{
+   display: none;
+}
+nav.mobile{
+   display: block;
+}
+nav.mobile ul{
+   display: none;
+}
+}
+

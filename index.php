@@ -1,146 +1,106 @@
+<?php include('config.php'); ?>
+<?php Site::updateUsuarioOnline(); ?>
+<?php Site::contador(); ?>
+<?php
+	$infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+	$infoSite->execute();
+	$infoSite = $infoSite->fetch();
+?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/fontawesome.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
-    <title>Document</title>
+	<title><?php echo $infoSite['titulo']; ?></title>
+	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="palavras-chave,do,meu,site">
+	<meta name="description" content="Descrição do meu website">
+	<link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
+	<meta charset="utf-8" />
 </head>
-
 <body>
-    <header>
-        <div>
-            <h1 class="logo" style="color:white"><?php echo htmlentities("<")?>VACANT.INDIE<?php echo htmlentities(">")?> </h1>
-            <nav class="desktop">
-                <ul>
-                    <li>
-                        <a href="/">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="/">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="/">Serviços</a>
-                    </li>
-                    <li>
-                        <a href="/">Contato
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="mobile right">
-                <ul>
-                    <li>
-                        <a href="/">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="/">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="/">Serviços</a>
-                    </li>
-                    <li>
-                        <a href="/">Contato
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="clear"></div>
+<base base="<?php echo INCLUDE_PATH; ?>" />
+	<?php
+		$url = isset($_GET['url']) ? $_GET['url'] : 'home';
+		switch ($url) {
+			case 'depoimentos':
+				echo '<target target="depoimentos" />';
+				break;
 
-    </header>
-    <section class="banner-principal">
-        <div class="overlay"></div>
-        <div class="center">
-            <form action="post">
-                <h2>Qual o seu melhor email??</h2>
-                <input type="email" nama="email" required>
-                <input type="submit" name="acao" value="Enviar">
-            </form>
-        </div>
-    </section>
-    <section class="descricao">
-        <div class="w50 left">
-            <h2>Jamerson Wesley</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, corporis maxime id sint delectus doloribus hic quia repellat itaque provident voluptas laboriosam culpa, beatae dicta voluptatem iure blanditiis pariatur minima!</p>
-        </div>
+			case 'servicos':
+				echo '<target target="servicos" />';
+				break;
+		}
+	?>
+	<div class="sucesso">Formulário enviado com sucesso!</div>
+	<div class="overlay-loading">
+		<img src="<?php echo INCLUDE_PATH ?>images/ajax-loader.gif" />
+	</div><!--overlay-loading-->
 
-        <div class="w50 left">
-            <img src="./images/logo.jpg" width="500px" height="500px" alt="">
-        </div>
-        <div class="clear"></div>
-    </section>
-    <section class="descricao">
-        <h2 class="titulo">Descrição</h2>
-        <div class="center">
-            <div class="especialidades w33 left ">
-                <h3><i class="fab fa-css3"></i></h3>
-                <h3>CSS3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, voluptatibus! Id odit animi eligendi, reiciendis numquam natus facilis nostrum laboriosam dolor minus cum necessitatibus ullam velit debitis quam? Rerum, in.</p>
-            </div>
-           
-            <div class="especialidades w33 left ">
-                <h3><i class="fab fa-php"></i></h3>
-                <h3>PHP</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, voluptatibus! Id odit animi eligendi, reiciendis numquam natus facilis nostrum laboriosam dolor minus cum necessitatibus ullam velit debitis quam? Rerum, in.</p>
-            </div>
-            <div class="especialidades w33 left">
-                <h3><i class="fab fa-html5"></i></h3>
-                <h3>HTML</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, voluptatibus! Id odit animi eligendi, reiciendis numquam natus facilis nostrum laboriosam dolor minus cum necessitatibus ullam velit debitis quam? Rerum, in.</p>
-            </div>
-            <div class="clear"></div>
-        </div>
+	<header>
+		<div class="center">
+			<div class="logo left"><a href="/">Logomarca</a></div><!--logo-->
+			<nav class="desktop right">
+				<ul>
+					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+				</ul>
+			</nav>
+			 <nav class="mobile right">
+			 	<div class="botao-menu-mobile">
+			 		<i class="fa fa-bars" aria-hidden="true"></i>
+			 	</div>
+				<ul>
+					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+				</ul>
+			</nav>
+		<div class="clear"></div><!--clear-->
+		</div><!--center-->
+	</header>
 
-    </section>
-    <section class="extras">
-        <div class="center">
-            <div class="w50 left">
-                <h2 class="titulo">Depoimentos</h2>
-                <div class="depoimento1">
-                    <p class="depoimento-decricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil optio debitis repellat dolores doloremque ex magni distinctio enim provident molestiae eum fugit magnam facilis in, amet explicabo laudantium quas maxime?</p>
-                </div>
-                <div class="depoimento1">
-                    <p class="depoimento-decricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil optio debitis repellat dolores doloremque ex magni distinctio enim provident molestiae eum fugit magnam facilis in, amet explicabo laudantium quas maxime?</p>
-                </div>
-                <div class="depoimento1">
-                    <p class="depoimento-decricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil optio debitis repellat dolores doloremque ex magni distinctio enim provident molestiae eum fugit magnam facilis in, amet explicabo laudantium quas maxime?</p>
-                </div>
-            </div>
-        </div>
-     
-        <div class="w50 left">
-            <h2>Serviços</h2>
-            <div class="servicos">
-                <ul>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, possimus nemo maiores quas ex minima deleniti commodi eius! Voluptas, numquam reprehenderit. Magnam dolorem, eos cum at reiciendis odit corporis distinctio.
-                    </li>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minima corrupti mollitia quisquam iure, sunt aliquam ducimus cumque debitis vero totam vitae suscipit odit eveniet, quibusdam error dolore ad recusandae.
+	<div class="container-principal">
+	<?php
 
-                    </li>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore quas et provident, ab ipsa aliquid iste sunt quis culpa vel beatae magni amet, quisquam nam eius, perspiciatis dolorum eum.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="center">
-            <p>Todos direitos reservados</p>
-        </div>
-        <div class="clear"></div>
-    </footer>
+		if(file_exists('pages/'.$url.'.php')){
+			include('pages/'.$url.'.php');
+		}else{
+			//Podemos fazer o que quiser, pois a página não existe.
+			if($url != 'depoimentos' && $url != 'servicos'){
+				$pagina404 = true;
+				include('pages/404.php');
+			}else{
+				include('pages/home.php');
+			}
+		}
 
+	?>
+
+	</div><!--container-principal-->
+
+	<footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'; ?>>
+		<div class="center">
+			<p>Todos os direitos reservados</p>
+		</div><!--center-->
+	</footer>
+
+	<script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
+	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
+
+	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
+
+	<?php
+		if($url == 'contato'){
+	?>
+	<?php } ?>
+	<!--<script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>-->
+	<script src="<?php echo INCLUDE_PATH; ?>js/formularios.js"></script>
 </body>
-
 </html>
