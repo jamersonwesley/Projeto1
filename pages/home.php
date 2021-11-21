@@ -17,7 +17,7 @@
 	<section class="descricao-autor">
 		<div class="center">
 		<div class="w50 left">
-			<h2><?php echo $infoSite['nome_autor']; ?></h2>
+			<h2>Jamerson Wesley</h2>
 			<p><?php echo $infoSite['descricao']; ?></p>
 		</div><!--w50-->
 		<div class="w50 left">
