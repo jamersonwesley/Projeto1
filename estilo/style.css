@@ -85,7 +85,7 @@ img{
 
 header{
 	padding:20px 0;
-	background: #3D437A;
+	background:  #008080;
 }
 
 header .logo{
@@ -229,7 +229,7 @@ section.especialidades h2.title{
 }
 
 .box-especialidade h3{
-	color: #404580;
+	color: #008080;
 	font-size: 40px;
 }
 
@@ -247,7 +247,7 @@ section.especialidades h2.title{
 
 section.extras{
 	padding: 30px 0;
-	background: #404580;
+	background: #008080;
 }
 
 .servicos-container,.depoimentos-container{
@@ -292,7 +292,7 @@ p.nome-autor{
 }
 
 footer{
-	background: #313462;
+	background: #008080;
 	padding: 30px 0;
 }
 

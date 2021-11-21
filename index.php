@@ -40,7 +40,7 @@
 
 	<header>
 		<div class="center">
-			<div class="logo left"><a href="/">Logomarca</a></div><!--logo-->
+			<div class="logo left"><a href="/">VACANT.INDIE</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
@@ -91,7 +91,7 @@
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
-	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
+	
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
