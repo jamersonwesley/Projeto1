@@ -44,7 +44,7 @@
 			</div><!--box-especialidade-->
 			<div class="w33 left box-especialidade">
 				<h3><i class="<?php echo $infoSite['icone3']; ?>" aria-hidden="true"></i></h3>
-				<h4>JavaScript</h4>
+				<h4>PHP</h4><i class="fa-brands fa-php"></i>
 				<p><?php echo $infoSite['descricao3']; ?></p>
 			</div><!--box-especialidade-->
 			
